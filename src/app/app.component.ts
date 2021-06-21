@@ -1,10 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { HttpClient} from '@angular/common/http';
+import { HttpService} from './http.service';
+import {ObjectType} from './objectType';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'purchase-app',
+  template: `<ul>
+    <li *ngFor="let objectType of objectTypes">
+      <p>{{objectType?.objectTypeId}}</p>
+      <p>{{objectType?.name}}</p>
+      <p>{{objectType?.description}}</p>
+    </li>
+  </ul>`,
+  providers: [HttpService]
 })
-export class AppComponent {
-  title = 'database-frontend-service';
+export class AppComponent implements OnInit {
+
+  objectTypes: ObjectType[] = [];
+
+  constructor(private httpService: HttpService){}
+
+  ngOnInit(){
+
+    this.httpService.getData().subscribe((data:any) =>
+      this.objectTypes=data, error => {console.log('errr')});
+}
 }

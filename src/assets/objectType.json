@@ -1,0 +1,27 @@
+[
+  {
+    "objectTypeId": 1,
+    "name": "Root",
+    "description": "Root object type"
+  },
+  {
+    "objectTypeId": 2,
+    "name": "First Child OT",
+    "description": "First child object type"
+  },
+  {
+    "objectTypeId": 3,
+    "name": "Project",
+    "description": null
+  },
+  {
+    "objectTypeId": 5,
+    "name": "Via Rest OT",
+    "description": "Try create OT via Rest call"
+  },
+  {
+    "objectTypeId": 6,
+    "name": "Contract",
+    "description": null
+  }
+]
