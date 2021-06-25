@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let objectType of objectTypes">
+    <p>{{objectType?.objectTypeId}}</p>
+    <p>{{objectType?.name}}</p>
+    <p>{{objectType?.description}}</p>
+  </li>
+</ul>
+<p>
+  <button (click)= "delayReload()"> Refresh Dashboard component </button>
+</p>
